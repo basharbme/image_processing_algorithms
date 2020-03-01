@@ -1,3 +1,5 @@
+% commented out sections are only for grayscale
+
 video = VideoReader("noisy.mp4");
 % video_out = VideoWriter("filtered");
 video_out_RGB = VideoWriter("filtered_RGB_3x3");
@@ -57,20 +59,15 @@ for i = 1:100
            frame_outB(m, n) = sortedB(ceil(mask_size(1)*mask_size(2)/2)); 
        end
     end
-%     figure
-%     imshow(uint8(frame_out))
-%     title("No median filter")
     combinedRGB = cat(3, frame_outR, frame_outG, frame_outB);
     writeVideo(video_out_RGB, uint8(combinedRGB))
     
 %     writeVideo(video_out, uint8(frame_out))
 end
 
-% recombinedRGBImage = cat(3, redChannel, greenChannel, blueChannel);
-
 
 close(video_out_RGB)
+
 %     figure
 %     imshow(uint8(frame_out))
 %     title("3x3 median filter")
-% % 

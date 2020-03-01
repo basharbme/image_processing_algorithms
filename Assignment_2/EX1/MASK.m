@@ -1,13 +1,9 @@
 imgRGB = imread('download.jpeg');   
                                     
 img = rgb2gray(imgRGB);
-% mask = [1 2 3; 4 5 6; 7 8 9];      % mask can be changed here
-mask = [1 2 3 4 5; 6 7 8 9 10; 11 12 13 14 15; 16 17 18 19 20; 21 22 23 24 25];
+mask = [1 2 3; 4 5 6; 7 8 9];      % mask can be changed here
+% mask = [1 2 3 4 5; 6 7 8 9 10; 11 12 13 14 15; 16 17 18 19 20; 21 22 23 24 25];
 mask_size = size(mask);
-
-figure
-imshow(img)
-title("Original image")
 
 %%
 
@@ -30,5 +26,9 @@ for m = 1+m_diff:img_size(1)+m_diff
 end
 
 figure
+subplot(1,2,1)
+imshow(img)
+title("Original image")
+subplot(1,2,2)
 imshow(uint8(new_img))
 title("Image after applying a filter")
