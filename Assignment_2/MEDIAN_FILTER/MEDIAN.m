@@ -5,9 +5,9 @@ video = VideoReader("noisy.mp4");
 video_out_RGB = VideoWriter("filtered_RGB_3x3");
 % open(video_out)
 open(video_out_RGB)
-mask_size = [3 3];
+mask_size = [5 5];
 
-for i = 1:100
+for i = 1:1
     frameRGB = read(video, i);
     
 %     frame = rgb2gray(frameRGB);
@@ -68,6 +68,6 @@ end
 
 close(video_out_RGB)
 
-%     figure
-%     imshow(uint8(frame_out))
-%     title("3x3 median filter")
+    figure
+    imshow(uint8(combinedRGB))
+    title("5x5 median filter on R, G, and B layers")

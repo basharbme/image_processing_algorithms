@@ -1,7 +1,5 @@
 imgRGB = imread('example.png');  
 img = rgb2gray(imgRGB);
-
-% img = imread('building.jpg'); 
                                    
 sobel_x = [-1 0 1; -2 0 2; -1 0 1];
 sobel_y = [1 2 1; 0 0 0; -1 -2 -1];
@@ -159,8 +157,6 @@ for i=1:img_size(1)
     end
 end
 
-% imshow(hough_space_grad)
-
 %% COMPARISON
 
 [H,T,R] = hough(edge_img); % Matlab intetrnal Hough transform
@@ -177,3 +173,64 @@ title("MATLAB Hough Transfrom")
 subplot(1,3,3)
 imshow(hough_space_grad)
 title("Obtained Hough Transfrom from gradients")
+
+%%
+
+hough_space_grad_size = size(hough_space_grad);
+
+figure
+imshow(img)
+hold on
+for i = 1:hough_space_grad_size(1)
+    for j = 1:hough_space_grad_size(2)
+        rho = i;
+        theta = j;
+        count = round(hough_space_grad(i, j));
+        
+        if (count > 2000)
+            x = rho*cos(theta);
+            y = rho*sin(theta);
+            pt1x = round(x - 50*sin(theta));
+            pt1y = round(y + 50*cos(theta));
+            pt2x = round(x + 50*sin(theta));
+            pt2y = round(y - 50*cos(theta));
+             
+            if ((pt1x <= img_size(1) && pt1x >= 0) && (pt2x < img_size(1) && pt2x >= 0) ...
+                 && (pt1y < img_size(2) && pt1y >= 0 ) && (pt2y < img_size(2)) && pt2y >= 0)
+             
+                 plot([pt1x pt2x], [pt1y pt2y], 'LineWidth',2,'Color','yellow');
+            end
+        end
+
+    end
+end
+hold off
+
+%%
+hough_space_size = size(hough_space);
+
+figure
+imshow(img)
+hold on
+for i = 1:hough_space_size(1)
+    for j = 1:hough_space_size(2)
+        rho = i;
+        theta = j;
+        count = round(hough_space(i, j));       
+        if (count > 100)
+            x = rho*cos(theta);
+            y = rho*sin(theta);
+            pt1x = round(x - 100*sin(theta));
+            pt1y = round(y + 100*cos(theta));
+            pt2x = round(x + 100*sin(theta));
+            pt2y = round(y - 100*cos(theta));
+            
+            if ((pt1x <= img_size(1) && pt1x >= 0) && (pt2x < img_size(1) && pt2x >= 0) ...
+                 && (pt1y < img_size(2) && pt1y >= 0 ) && (pt2y < img_size(2)) && pt2y >= 0)
+             
+                plot([pt1x pt2x], [pt1y pt2y], 'LineWidth',2,'Color','green');
+            end
+        end
+    end
+end
+hold off
