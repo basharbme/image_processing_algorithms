@@ -7,7 +7,7 @@ One point worth noting in this exercise was implementation of weighted averaging
 
 ![](./images/1.png)
 
-Fig. 1. Various interpolation techniques shown on image zoomed two times.
+<center>Fig. 1. Various interpolation techniques shown on image zoomed two times. </center>
 
 ### Distance Transform and Skeletonization
 
@@ -17,11 +17,11 @@ In the Skeletonization, as was mentioned in exercise, boundary pixels which had 
 
 ![](./images/2.png)
 
-Fig. 2. Distance transform and skeletonization algorithms used on rectangle with rounded corners
+<center>Fig. 2. Distance transform and skeletonization algorithms used on rectangle with rounded corners </center>
 
 ![](./images/3.png)
 
-Fig. 3. Distance transform and skeletonization algorithms used on Facebook logo
+<center>Fig. 3. Distance transform and skeletonization algorithms used on Facebook logo </center>
 
 
 ### Custom filter mask on image
@@ -31,11 +31,12 @@ Similar mask ([1 2 3 4 5; 6 7 8 9 10; 11 12 13 14 15; 16 17 18 19 20; 21 22 23 2
 
 ![](./images/4.png)
 
-Fig. 4. Image after applying given 3x3 mask
+<center>Fig. 4. Image after applying given 3x3 mask </center>
 
 
 ![](./images/5.png)
-Fig. 5. Image after applying similar to given 5x5 mask
+
+<center>Fig. 5. Image after applying similar to given 5x5 mask </center>
 
 
 ### Sobel edge detector
@@ -44,11 +45,11 @@ In the second exercise, using the same convolution algorithm, Sobel edge detecti
 
 ![](./images/6.png)
 
-Fig. 6. Circuit image after applying Sobel edge detector.
+<center>Fig. 6. Circuit image after applying Sobel edge detector. </center>
 
 ![](./images/7.png)
 
-Fig. 7. Building image after applying Sobel edge detector.
+<center>Fig. 7. Building image after applying Sobel edge detector. </center>
 
 ### Median filtering
 
@@ -79,7 +80,7 @@ In the last exercise, the task was to implement the Hough transform on the image
 
 ![](./images/17.png)
 
-Fig. 8. Input image after applying Sobel edge detector.
+<center>Fig. 8. Input image after applying Sobel edge detector. </center>
 
 
 Afterwards, two techniques were used to obtain the Hough space of the input image.
@@ -89,7 +90,7 @@ On the other hand, Hough transform was created by using the gradients obtained b
 
 ![](./images/18.jpg)
 
-Fig. 9. Hough transforms using 3 different techniques.
+<center>Fig. 9. Hough transforms using 3 different techniques.
 
 ![](./images/19.png)
 
@@ -97,7 +98,7 @@ Fig. 10. Thresholded edge lines obtained from classical Hough transform
 
 ![](./images/20.png)
 
-Fig. 11. Thresholded edge lines obtained from gradients Hough transform
+Fig. 11. Thresholded edge lines obtained from gradients Hough transform </center>
 
 
 ### Digit Recognition algorithm
@@ -117,29 +118,37 @@ The advantage of this implementation is that it is able to recognize classical n
 The results of digit recognition accuracies on a test in set are shown in Fig. 1. This accuracy statistics considered all 1000 testing samples. 
 These tests can be additionally run the “Testing_Main.m” script in the main folder.
 
+<center>
+
 ![](./images/21.png)
 
-Fig. 12. Digit recognition accuracy on the testing set
+Fig. 12. Digit recognition accuracy on the testing set </center>
 
 
 Our methodology of comparing the scaled values is as follows:
 
 Firstly, we obtain maximum widths at different heights of the digit, that are chosen to “hit” the most valuable features on the majority of samples (Fig. 2). 
 
+<center>
+
 ![](./images/22.png)
 
-Fig. 13. Display of 7 cross-sections of digits for horizontal distance
+Fig. 13. Display of 7 cross-sections of digits for horizontal distance </center>
 
 
 Then, the main features constitute to relations of these horizontal distances as follows:
 
-![](./images/23.png)
+<center>
+
+![](./images/23.png) </center>
 
  
 Afterwards these values are compared to values that belong (in particular range) to some particular digit and the classification is done using the “modified decision tree” model based on features’ values below:
 
+<center>
+
 ![](./images/24.png)
 
-Fig. 14. Mean values of scaled distances sets for each digit
+Fig. 14. Mean values of scaled distances sets for each digit </center>
 
 [1] Reddy, R. Vijaya Kumar, and Uppu Ravi Babu. "Printed Numeral Recognition Using Structural and Skeleton Features." (2018).
